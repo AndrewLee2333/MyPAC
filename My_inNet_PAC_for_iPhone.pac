@@ -6,8 +6,11 @@ function FindProxyForURL(url, host)
     if (isInNet(dnsResolve(host), "10.0.0.0", "255.0.0.0") ||
         isInNet(dnsResolve(host), "172.16.0.0",  "255.240.0.0") ||
         isInNet(dnsResolve(host), "192.168.0.0", "255.255.0.0") ||
-        isInNet(dnsResolve(host), "127.0.0.0", "255.255.255.0"))
-        return "DIRECT";
+        isInNet(dnsResolve(host), "127.0.0.0", "255.255.255.0")
+       )
+        {
+         return "DIRECT";
+        }
  
     if (shExpMatch(url,"*twitter*")   ||
         shExpMatch(url,"*facebook*")  ||
@@ -20,8 +23,9 @@ function FindProxyForURL(url, host)
         shExpMatch(url,"*pixiv*")     ||
         shExpMatch(url,"*tumblr*")    ||
         shExpMatch(url,"*onedrive*")  ||
-        shExpMatch(url,"*github*")    ||
+        shExpMatch(url,"*github*")    
        )
-    {
-       return "SOCKS 192.168.3.60:10808; PROXY 192.168.3.60:10809; DIRECT";
-    }
+        {
+         return "SOCKS 192.168.3.60:10808; PROXY 192.168.3.60:10809; DIRECT";
+        }
+}
