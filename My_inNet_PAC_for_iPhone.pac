@@ -20,6 +20,7 @@ function FindProxyForURL(url, host)
         shExpMatch(url,"*pixiv*")     ||
         shExpMatch(url,"*tumblr*")    ||
         shExpMatch(url,"*onedrive*")  ||
+        shExpMatch(url,"*github*")    ||
        )
     {
        return "SOCKS 192.168.3.60:10808; PROXY 192.168.3.60:10809; DIRECT";
