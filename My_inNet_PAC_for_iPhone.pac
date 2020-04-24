@@ -9,7 +9,7 @@ function FindProxyForURL(url, host)
         isInNet(dnsResolve(host), "127.0.0.0", "255.255.255.0")
        )
         {
-         return "DIRECT";
+         return 'DIRECT';
         }
  
     if (shExpMatch(url,"*twitter*")   ||
@@ -26,6 +26,7 @@ function FindProxyForURL(url, host)
         shExpMatch(url,"*github*")    
        )
         {
-         return "SOCKS 192.168.3.60:10808; PROXY 192.168.3.60:10809; DIRECT";
+         return 'SOCKS 192.168.3.60:10808; PROXY 192.168.3.60:10809; DIRECT';
         }
+    return 'DIRECT';
 }
